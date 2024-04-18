@@ -4,7 +4,7 @@ class S4523 extends StatelessWidget {
   const S4523({super.key});
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return const MyNameWidget();
   }
 }
 
@@ -16,8 +16,20 @@ class MyNameWidget extends StatefulWidget {
 }
 
 class _MyNameWidgetState extends State<MyNameWidget> {
+  String name = '';
   @override
   Widget build(BuildContext context) {
-    return const Text('');
+    return Column(
+      children: [
+        Text(name),
+        ElevatedButton(
+            onPressed: () {
+              setState(() {
+                name = 'Hallo Gazzar';
+              });
+            },
+            child: const Text('Name anzeigen')),
+      ],
+    );
   }
 }
